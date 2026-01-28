@@ -13,6 +13,9 @@ public class main {
 		System.out.println("Busses:");
 		handler.printBusList();
 		System.out.println("\n---------------------------");
+		
+		System.out.println("Adding station");
+		handler.addBusStation("test", 0.111111, 2.222222222);
 	}
 
 }
