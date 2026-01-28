@@ -8,7 +8,7 @@
 	</bus>
 	<bus id = "1">
 		<makemodel>MCI D4000 Coach</makemodel>
-		<type>City</type>
+		<type>Long Distance</type>
 		<fuelsize>164</fuelsize>
 		<fuelburn>12</fuelburn>
 		<cruisespeed>65</cruisespeed>
