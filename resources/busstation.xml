@@ -1,0 +1,12 @@
+<stations>
+	<busStation id = "0">
+		<name>Aiken Bus Stop</name>
+		<latitude>33.572490869244405</latitude>
+		<longitude>-81.7656840765117</longitude>
+	</busStation>
+	<busStation id = "1">
+		<name>Augusta Bus Stop</name>
+		<latitude>33.477813813356946</latitude>
+		<longitude>-81.98879400439267</longitude>
+	</busStation>
+</stations>
