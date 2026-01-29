@@ -15,7 +15,9 @@ public class main {
 		System.out.println("\n---------------------------");
 		
 		System.out.println("Adding station");
-		handler.addBusStation("test", 0.111111, 2.222222222);
+		System.out.println(handler.addBusStation("test", 0.111111, 2.222222222));
+		System.out.println("removing station 3");
+		System.out.println(handler.removeBusStation(3));
 	}
 
 }
