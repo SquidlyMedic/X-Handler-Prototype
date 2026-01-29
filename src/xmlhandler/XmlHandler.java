@@ -13,7 +13,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import java.io.File;
 
-
+//TODO
+//*make bus addition procedures
+//*make bus removal procedures
 
 public class XmlHandler 
 {
