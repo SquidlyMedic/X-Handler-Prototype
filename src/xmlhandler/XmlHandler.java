@@ -39,10 +39,6 @@ public class XmlHandler
 		stationList = stations.getElementsByTagName("busStation");
 		busList = busses.getElementsByTagName("bus");
 		
-		//Reading each element of the station list for testing only rn, will move
-		
-		//Reading each element of the bus list for testing only rn, will move
-		
 		
 		stationIdIndex = getStationIdIndex();  //Method to find the current available index
 		System.out.println("Current station index: " + stationIdIndex);
@@ -185,6 +181,37 @@ public class XmlHandler
 		
 		return true;
 	}
+	public boolean addBus(String inMakemodel, String inType, int inFuelsize, int inFuelburn, int inCruisespeed) throws Exception
+	{
+		Element newBus = busses.createElement("bus");
+		newBus.setAttribute("id", String.valueOf(busIdIndex));
+		Element makemodel = busses.createElement("makemodel");
+		makemodel.setTextContent(inMakemodel);
+		Element type = busses.createElement("type");
+		type.setTextContent(inType);
+		Element fuelsize = busses.createElement("fuelsize");
+		fuelsize.setTextContent(String.valueOf(inFuelsize));
+		Element fuelburn = busses.createElement("fuelburn");
+		fuelburn.setTextContent(String.valueOf(inFuelburn));
+		Element cruisespeed = busses.createElement("cruisespeed");
+		cruisespeed.setTextContent(String.valueOf(inCruisespeed));
+		
+		newBus.appendChild(makemodel);
+		newBus.appendChild(type);
+		newBus.appendChild(fuelsize);
+		newBus.appendChild(fuelburn);
+		newBus.appendChild(cruisespeed);
+		
+		busses.getDocumentElement().appendChild(newBus);
+		
+		busList = busses.getElementsByTagName("bus");
+		
+		saveXmlBusses();
+		
+		busIdIndex++;
+		
+		return true;
+	}
 	
 	public boolean removeBusStation(int stationId) throws Exception
 	{
@@ -202,4 +229,22 @@ public class XmlHandler
 		
 		return false;
 	}
+	public boolean removeBus(int busId) throws Exception
+	{
+		for(int i = 0; i < busList.getLength(); i++)
+		{
+			Element bus = (Element) busList.item(i);
+			
+			if(Integer.parseInt(bus.getAttribute("id")) == busId)
+			{
+				busses.getDocumentElement().removeChild(bus);
+				saveXmlBusses();
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	
 }

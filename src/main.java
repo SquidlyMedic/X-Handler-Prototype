@@ -6,6 +6,8 @@ public class main {
 	{
 		System.out.println("XML Handler Prototype");
 		XmlHandler handler = new XmlHandler();
+	
+		
 		System.out.println("---------------------------");
 		System.out.println("Bus Stations:");
 		handler.printBusStationList();
